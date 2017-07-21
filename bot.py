@@ -4,8 +4,8 @@ import json
 import os,sys
 import MeCab
 sys.path.append(os.pardir)
-from name import ACCEESS_TOKEN
-from name import ACCEESS_SECRET
+from name import ACCESS_TOKEN
+from name import ACCESS_SECRET
 from name import CONSUMER_KEY
 from name import CONSUMER_SECRET
 
@@ -16,7 +16,7 @@ if __name__ == "__main__":
 	c = conn.cursor()
 
 	#twitter認証キーの設定
-	auth = twitter.OAuth(ACCEESS_TOKEN,ACCEESS_SECRET,CONSUMER_KEY,CONSUMER_SECRET)
+	auth = twitter.OAuth(ACCESS_TOKEN,ACCESS_SECRET,CONSUMER_KEY,CONSUMER_SECRET)
 
 	#restにも認証を飛ばす
 	t_rest = twitter.Twitter(auth = auth)

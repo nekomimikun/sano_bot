@@ -35,16 +35,16 @@ if __name__ == "__main__":
                 if text_p.find("さの先輩") and text_p["user_id"] != "自分のID": #さの先輩を含むツイートかどうか調べる
     			#以下ツイートした人にリプを返す
     			c.execute("select * from Library")
-    			lst = c.fetchall()
-    			reply = "@" + str(text_p["usr"]["screen_name"]) + " " + str(lst[random.random(0,len(lst))]) + "さの先輩"
+    			list = c.fetchall()
+    			reply = "@" + str(text_p["usr"]["screen_name"]) + " " + str(list[random.random(0,len(list))]) + "さの先輩"
     			t_rest.statuses.update(status = reply)
-                else:
-                    #ここに名詞を取り出してその中から一つ選ぶ処理を入れる
+    		else
+    		#ここに名詞を取り出してその中から一つ選ぶ処理を入れる
 
-                    # choice_nouns #選ばれた名詞
+    		choice_nouns #選ばれた名詞
 
-                    #特徴ベクトルを基にNGワードかどうかをチェックする処理入れて
+			#特徴ベクトルを基にNGワードかどうかをチェックする処理入れて
 
-                    sql = "insert into Test_table values(?)"
-                    c.execute(sql,choice_nouns)
-                    conn.commit()
+			sql = "insert into Test_table values(?)"
+			c.execute(sql,choice_nouns)
+			conn.commit();
